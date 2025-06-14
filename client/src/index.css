@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+/* Red Theme */
+.theme-red {
+  --background: hsl(222, 84%, 4.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(217, 32.6%, 17.5%);
+  --muted-foreground: hsl(215, 20.2%, 65.1%);
+  --popover: hsl(222, 84%, 4.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(222, 84%, 4.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(217, 32.6%, 17.5%);
+  --input: hsl(217, 32.6%, 17.5%);
+  --primary: hsl(0, 72%, 51%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(217, 32.6%, 17.5%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(217, 32.6%, 17.5%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 85.7%, 97.3%);
+  --ring: hsl(0, 72%, 51%);
+}
+
+/* Blue Theme */
+.theme-blue {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 84%, 4.9%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 84%, 4.9%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222, 84%, 4.9%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222, 84%, 4.9%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(217, 91%, 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom Theme Classes */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-bg {
+  background: linear-gradient(-45deg, hsl(0, 72%, 51%), hsl(222, 84%, 4.9%), hsl(0, 72%, 51%), hsl(345, 82%, 11%));
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+}
+
+.theme-blue .hero-bg {
+  background: linear-gradient(-45deg, hsl(217, 91%, 60%), hsl(210, 40%, 98%), hsl(221, 83%, 53%), hsl(213, 27%, 84%));
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.brand-accent {
+  color: hsl(0, 72%, 51%);
+}
+
+.theme-blue .brand-accent {
+  color: hsl(217, 91%, 60%);
+}
+
+.icon-accent {
+  color: hsl(0, 72%, 51%);
+}
+
+.theme-blue .icon-accent {
+  color: hsl(217, 91%, 60%);
+}
+
+.processor-card {
+  background: hsl(217, 32.6%, 17.5%, 0.5);
+  border: 1px solid hsl(217, 32.6%, 17.5%);
+}
+
+.theme-blue .processor-card {
+  background: hsl(0, 0%, 100%, 0.8);
+  border: 1px solid hsl(214, 32%, 91%);
+}
+
+.url-input {
+  background: hsl(217, 32.6%, 17.5%);
+  border: 2px solid hsl(217, 32.6%, 17.5%);
+  color: hsl(0, 0%, 98%);
+}
+
+.url-input::placeholder {
+  color: hsl(215, 20.2%, 65.1%);
+}
+
+.url-input:focus {
+  border-color: hsl(0, 72%, 51%);
+}
+
+.theme-blue .url-input {
+  background: hsl(0, 0%, 100%);
+  border: 2px solid hsl(214, 32%, 91%);
+  color: hsl(222, 84%, 4.9%);
+}
+
+.theme-blue .url-input::placeholder {
+  color: hsl(215, 16%, 47%);
+}
+
+.theme-blue .url-input:focus {
+  border-color: hsl(217, 91%, 60%);
+}
+
+.bypass-btn {
+  background: hsl(0, 72%, 51%);
+  color: hsl(0, 0%, 98%);
+}
+
+.bypass-btn:hover {
+  background: hsl(0, 72%, 45%);
+}
+
+.theme-blue .bypass-btn {
+  background: hsl(217, 91%, 60%);
+  color: hsl(0, 0%, 98%);
+}
+
+.theme-blue .bypass-btn:hover {
+  background: hsl(217, 91%, 55%);
+}
+
+.results-container {
+  background: hsl(217, 32.6%, 17.5%, 0.5);
+  border: 1px solid hsl(217, 32.6%, 17.5%);
+}
+
+.theme-blue .results-container {
+  background: hsl(213, 27%, 84%, 0.5);
+  border: 1px solid hsl(213, 27%, 84%);
+}
+
+.copy-btn {
+  background: hsl(217, 32.6%, 17.5%);
+  color: hsl(0, 0%, 98%);
+}
+
+.copy-btn:hover {
+  background: hsl(217, 32.6%, 20%);
+}
+
+.theme-blue .copy-btn {
+  background: hsl(210, 40%, 96%);
+  color: hsl(217, 91%, 60%);
+}
+
+.theme-blue .copy-btn:hover {
+  background: hsl(213, 27%, 84%);
+}
+
+.loading-spinner {
+  border-color: hsl(0, 72%, 51%);
+}
+
+.theme-blue .loading-spinner {
+  border-color: hsl(217, 91%, 60%);
+}
+
+.feature-card {
+  background: hsl(217, 32.6%, 17.5%, 0.5);
+  border: 1px solid hsl(217, 32.6%, 17.5%);
+}
+
+.theme-blue .feature-card {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(214, 32%, 91%);
+}
+
+.feature-icon {
+  background: hsl(0, 72%, 51%);
+}
+
+.theme-blue .feature-icon {
+  background: hsl(217, 91%, 60%);
+}
+
+.api-info-card {
+  background: hsl(217, 32.6%, 17.5%, 0.5);
+  border: 1px solid hsl(217, 32.6%, 17.5%);
+}
+
+.theme-blue .api-info-card {
+  background: hsl(0, 0%, 100%, 0.8);
+  border: 1px solid hsl(214, 32%, 91%);
+}
+
+/* Discord Banner */
+.discord-banner {
+  background: linear-gradient(45deg, #5865f2, #7289da);
+  background-size: 200% 200%;
+  animation: discord-gradient 4s ease infinite;
+  box-shadow: 0 2px 8px rgba(88, 101, 242, 0.3);
+}
+
+.theme-blue .discord-banner {
+  background: linear-gradient(45deg, #5865f2, #4f46e5);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+@keyframes discord-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
