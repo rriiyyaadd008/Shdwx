@@ -7,5 +7,7 @@
   "routes": [
     { "src": "/api/(.*)", "dest": "api/index.ts" },
     { "src": "/(.*)", "dest": "client/dist/index.html" }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "installCommand": "npm install"
 }
